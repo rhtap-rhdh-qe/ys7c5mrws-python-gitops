@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ys7c5mrws-python-gitops
+  description: This is GitOps manifest for ys7c5mrws-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=ys7c5mrws-python
+    backstage.io/kubernetes-id: ys7c5mrws-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: ys7c5mrws-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:ys7c5mrws-python
